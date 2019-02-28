@@ -31,7 +31,7 @@ func NewUserFromUser(other User) *User {
 	return user
 }
 
-// Does this username/password combo exist in the database?  If so, return the
+// AuthenticateUser Does this username/password combo exist in the database?  If so, return the
 // user.  If not, return an error.
 func AuthenticateUser(db couch.Database, username, password string) (*User, error) {
 

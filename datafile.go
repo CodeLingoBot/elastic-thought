@@ -119,7 +119,7 @@ func (d *Datafile) UpdateProcessingState(newState ProcessingState) (bool, error)
 
 }
 
-// Does this datafile have a valid Id?
+// HasValidId Does this datafile have a valid Id?
 func (d Datafile) HasValidId() bool {
 	return len(d.Id) > 0
 }

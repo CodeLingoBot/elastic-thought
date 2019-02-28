@@ -58,7 +58,7 @@ func (c Configuration) NewBlobStoreClient() (BlobStore, error) {
 	return NewBlobStore(c.CbfsUrl)
 }
 
-// Add values from parsedDocOpts into Configuration and return a new instance
+// Merge adds values from parsedDocOpts into Configuration and return a new instance
 // Example map:
 //     map[--help:false --blob-store-url:file:///tmp --sync-gw-url:http://blah.com:4985/et]
 func (c Configuration) Merge(parsedDocOpts map[string]interface{}) (Configuration, error) {

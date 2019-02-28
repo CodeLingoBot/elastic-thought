@@ -81,17 +81,17 @@ func (d Dataset) GetSplittableDatafile(db couch.Database) (*Datafile, error) {
 
 }
 
-// Get the training datafile object
+// GetTrainingDatafile gets the training datafile object
 func (d Dataset) GetTrainingDatafile(db couch.Database) (*Datafile, error) {
 	return FindDatafile(db, d.TrainingDataset.DatafileID)
 }
 
-// Get the testing datafile object
+// GetTestingDatafile gets the testing datafile object
 func (d Dataset) GetTestingDatafile(db couch.Database) (*Datafile, error) {
 	return FindDatafile(db, d.TestDataset.DatafileID)
 }
 
-// Get the source url associated with the training datafile
+// GetTrainingDatafileUrl gets the source url associated with the training datafile
 func (d Dataset) GetTrainingDatafileUrl(db couch.Database) string {
 	datafile, err := d.GetTrainingDatafile(db)
 	if err != nil {
@@ -100,7 +100,7 @@ func (d Dataset) GetTrainingDatafileUrl(db couch.Database) string {
 	return datafile.Url
 }
 
-// Get the source url associated with the testing datafile
+// GetTestingDatafileUrl gets the source url associated with the testing datafile
 func (d Dataset) GetTestingDatafileUrl(db couch.Database) string {
 	datafile, err := d.GetTestingDatafile(db)
 	if err != nil {
